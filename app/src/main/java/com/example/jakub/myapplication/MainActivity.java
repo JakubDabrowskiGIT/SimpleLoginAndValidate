@@ -19,40 +19,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void login(View view) {
         EditText loginET = findViewById(R.id.login);
-        AlertDialog.Builder loginCheck = new AlertDialog.Builder(this);
-        if (loginET.getText().length() < 7) {
-            loginCheck.setMessage("Login must have more than 7 char");
-            loginCheck.show();
-        } else {
-            int duration = Toast.LENGTH_SHORT;
-            Context context = getApplicationContext();
-            String text = "Login accepted";
-            Toast toast = Toast.makeText(context, text, duration);
-            if (goodPass(view)) {
-                goodPass(view);
-                return;
-            } else {
-                toast.show();
-            }
-        }
-    }
-
-    public void password(View view) {
         EditText passwordET = findViewById(R.id.password);
         AlertDialog.Builder loginCheck = new AlertDialog.Builder(this);
-        if (passwordET.getText().length() < 4) {
-            loginCheck.setMessage("Password must have more than 7 char");
+        if (loginET.getText().length() < 7 || passwordET.getText().length() < 4) {
+            loginCheck.setMessage("Login and password must have more than 7 char");
             loginCheck.show();
         } else {
             int duration = Toast.LENGTH_SHORT;
             Context context = getApplicationContext();
-            String text = "Password accepted";
+            String text = "Login and password accepted";
             Toast toast = Toast.makeText(context, text, duration);
             if (goodPass(view)) {
-                goodPass(view);
                 return;
             } else {
                 toast.show();
+                return;
             }
         }
     }
