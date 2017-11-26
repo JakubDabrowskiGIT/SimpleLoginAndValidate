@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12px"
+    tools:context="com.example.jakub.myapplication.MainActivity">
+
+
+    <EditText
+        android:id="@+id/login"
+        android:width="500px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Login"
+        android:textSize="30dp"
+       />
+
+    <EditText
+        android:id="@+id/password"
+        android:width="500px"
+        android:inputType="textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        android:hint="Hasło"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="login"
+        android:text="Check Login"
+        app:layout_constraintLeft_toRightOf="@+id/login"
+        android:textSize="30dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="password"
+        android:text="Check Pass "
+        app:layout_constraintLeft_toRightOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
+        android:textSize="30dp"/>
+
+</android.support.constraint.ConstraintLayout>
